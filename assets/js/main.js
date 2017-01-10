@@ -449,14 +449,7 @@
 
 				});
 
-	   //Position the social media icons after all this stuff is done
-	    $("#footer-home").css("opacity","1");
-		$("#footer-home").css("position","absolute");
-		$("#footer-home").css("bottom","0");
-		$("#footer-home .icons").css("margin","0.5rem");
+		
 	});
-
-	
-
 
 })(jQuery);

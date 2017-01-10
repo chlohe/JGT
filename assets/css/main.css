@@ -1,4 +1,4 @@
-@import url(font-awesome.min.css);
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400");
 
 /*
@@ -8733,4 +8733,16 @@
 
 #footer-home {
 	opacity: 0;
+	left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
 }
+
+.hidden{
+	display:none !important;
+}
+
+.visible{
+	display:block !important;
+}
+
