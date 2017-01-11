@@ -37,7 +37,7 @@
 					<h2>Consult the DVL</h2>
 					<p>Be direct in thy questioning or else Socrates will rebuke thee</p>
 					<br/>
-					<input id="query" /> <button onclick="go()"> Go </button>
+					<input id="query" /> <button id="go"> Go </button>
 					<br /><br /><br />
 					<div id="result"> </div>
 				</div>
@@ -48,19 +48,7 @@
 
 		</div>
 
-		<script>
-		function go(){
-			$.get(
-				"https://script.google.com/macros/s/AKfycbxpxvgz_h46k1zDmlGghANjL4uLiGUXCYrz2p_2nKXb-s8SFZM/exec",
-				{query : $("#query").val()},
-				function(data) {
-					var word = JSON.parse(data);
-					$("#result").html("<h2><b>" + word[1] + "</b> " + word[2] + "</h2> <br/> <p>" + word[4] + "</p> <p>" + word[5] + "</p> <br/>" + word[6]);
-				}
-			);
-		}
-		</script>
-
+		
 		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.scrollex.min.js"></script>
@@ -68,4 +56,6 @@
 		<script src="assets/js/skel.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		<script src="assets/js/vocab/latinvocab.js"></script>
+
 </body>
