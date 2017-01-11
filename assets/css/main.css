@@ -8596,7 +8596,7 @@
 
 /* banner */
 
-	.banner {
+	.banner-padding {
 		padding: 8em 0 0.1em 0 ;
 	}
 
@@ -8745,4 +8745,17 @@
 .visible{
 	display:block !important;
 }
+
+#latin, #greek, #latin-menu, #greek-menu{
+
+	animation-duration: 0.5s;
+
+}
+
+.no-link-underline{
+
+	text-decoration: none;
+
+}
+
 

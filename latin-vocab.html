@@ -1,0 +1,70 @@
+
+<head>
+	<title>JustGratinThings</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css" >
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" >
+ </head>
+
+<body>
+
+	<!-- Wrapper -->
+		<div id="wrapper" class="divided">
+			<div class="banner">				
+				<nav>
+					<ul>
+						<li><a href="#menu">Menu</a></li>
+					</ul>
+				</nav>
+			</div>
+		<!-- Menu -->
+				<nav id="menu">
+					<h2>Menu</h2>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="generic.html">Ipsum veroeros</a></li>
+						<li><a href="generic.html">Tempus etiam</a></li>
+						<li><a href="generic.html">Consequat dolor</a></li>
+						<li><a href="elements.html">Elements</a></li>
+					</ul>
+				</nav>
+
+				
+			<!-- Latin - Top Level -->
+			<section id="latin-menu" class="wrapper style1  align-center">
+				<div class="inner">
+					<h2>Consult the DVL</h2>
+					<p>Be direct in thy questioning or else Socrates will rebuke thee</p>
+					<br/>
+					<input id="query" /> <button onclick="go()"> Go </button>
+					<br /><br /><br />
+					<div id="result"> </div>
+				</div>
+			</section>
+
+	
+
+
+		</div>
+
+		<script>
+		function go(){
+			$.get(
+				"https://script.google.com/macros/s/AKfycbxpxvgz_h46k1zDmlGghANjL4uLiGUXCYrz2p_2nKXb-s8SFZM/exec",
+				{query : $("#query").val()},
+				function(data) {
+					$("#result").html(data);
+				}
+			);
+		}
+		</script>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+</body>
