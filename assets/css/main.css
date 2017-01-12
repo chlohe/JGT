@@ -2501,6 +2501,16 @@
 				width: 100%;
 			}
 
+		.image-circle {
+			display: block;
+			max-width: 80%;
+			height: auto;
+			margin: 0 auto;
+			border-radius: 50%;
+		}
+		
+
+
 /* List */
 
 	ol {
