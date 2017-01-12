@@ -8746,16 +8746,14 @@
 	display:block !important;
 }
 
-#latin, #greek, #latin-menu, #greek-menu{
-
-	animation-duration: 0.5s;
-
-}
-
 .no-link-underline{
 
 	text-decoration: none;
 
 }
 
+#banner, #latin-menu, #greek-menu, #latin-lit-menu, #greek-lit-menu {
 
+	animation-duration: 0.5s;
+
+}

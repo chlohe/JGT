@@ -9,6 +9,7 @@ $("a").click(function(){
         //Mad transition tings - fade out and in
 
         var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+
         $("#"+current).addClass("animated fadeOut").one(animationEnd, function() {
             $("#"+current).addClass("hidden");
             $("#"+current).removeClass("animated fadeOut");
