@@ -3,7 +3,8 @@ $("#go").click(function(){
     $("#result").html("<i class=\"fa fa-spin fa-refresh\" aria-hidden=\"true\"></i>");
     $.get(
         "https://script.google.com/macros/s/AKfycbxpxvgz_h46k1zDmlGghANjL4uLiGUXCYrz2p_2nKXb-s8SFZM/exec",
-        {query : $("#query").val()},
+        {query : $("#query").val(),
+         language : "Latin"},
         function(data) {
             var word = JSON.parse(data);
             var table = "<table class=\"alt uniform fixed\">";
