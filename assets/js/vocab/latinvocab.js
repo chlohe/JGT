@@ -6,7 +6,15 @@ $("#go").click(function(){
         {query : $("#query").val(),
          language : "Latin"},
         function(data) {
-            var word = JSON.parse(data);
+
+            var word = "";
+            if (data == "No Results"){
+                $("#result").html("<h2> No Results </h2>");
+            }
+            
+            word = JSON.parse(data);
+
+
             var table = "<table class=\"alt uniform fixed\">";
 
             if (word[3].toLowerCase().includes ("noun")){
