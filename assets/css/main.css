@@ -8774,7 +8774,7 @@
 
 }
 
-#banner, #latin-menu, #greek-menu, #latin-lit-menu, #greek-lit-menu {
+section[data-linker='true'] {
 
 	animation-duration: 0.5s;
 
