@@ -13,13 +13,13 @@
 			
 		<!-- Menu -->
 				<nav id="menu">
-					<h2>Menu</h2>
+					<h1>Menu</h1>
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li><a href="generic.html">About Us</a></li>
-						<li><a href="generic.html">Tempus etiam</a></li>
-						<li><a href="generic.html">Consequat dolor</a></li>
-						<li><a href="elements.html">Elements</a></li>
+						<li><a href="index.html#latin">Latin</a></li>
+						<li><a href="index.html#greek">Greek</a></li>
+						<li><a href="About.html">About Us</a></li>
+						<li><a href="contact.html">Contact</a></li>
 					</ul>
 				</nav>
 
@@ -34,7 +34,8 @@
 					<div class="content">
 						<h1>About Us</h1>
 						<p class="major">We Are Committed and Dedicated Members of the GSP Who Fight for World-Wide Revolution and the Imposition of Ancient Greek upon the Resulting Utopia</p>
-                        <a href="#lower" class="button big wide smooth-scroll-middle">Continue</a>
+                        <a href="#lower" data-target-id="team" class="button big wide smooth-scroll-middle"> The Team </a>
+						<a href="#lower" data-target-id="source" class="button big wide smooth-scroll-middle"> Progress </a>
 						
 					</div>
 					<div class="image">
@@ -51,12 +52,12 @@
 
 			<div id="lower">	
 			<!-- Meet the Team -->
-			<section id="team" class="wrapper style1 align-center">
+			<section id="team"  data-linker="true" class="wrapper style1 align-center">
 				<div>
-                    <br/><br/>
+                    <br/><br/><br/><br/>
 					<h2>Meet the Team</h2>
 					<p>The people [citation needed] behind JustGratinThings</p>
-					<div class="spotlight onscroll-image-fade-in style2 orient-right content-align-left image-position-center">
+					<div class="spotlight onscroll-image-fade-in style2 orient-right content-align-left image-position-center no-vertical-padding" >
 						<div class="content">
                             <h3>Dylan Hillier</h3>
 							<p>Hi, I'm the founder and admin/creator of justgratinthings and I am responsible for the dodgy html pages’ content, especially the lists (apart from the few pages done by Sebastian). I'm also probably responsible for errors in the database since I generated a large proportion of it. Outside of these duties I'm a classicist who achieved an A* in both Greek and Latin at GCSE, and am now taking Greek as an A-level. My hobbies include rowing, reading, and the odd spot of computer gaming.</p>
@@ -65,7 +66,7 @@
                             <img src="images/Dylan.png"/>
 						</div>
 					</div>
-					<div class="spotlight onscroll-image-fade-in style2 orient-right content-align-left image-position-center">
+					<div class="spotlight onscroll-image-fade-in style2 orient-right content-align-left image-position-center no-vertical-padding">
 						<div class="content">
                             <h3>Peter He</h3>
                             <p>Hi, I drink coffee and alcohol at the same time and this gives me the confidence to do things with my flimsy uncontrolled body. That's why most of the code I've written is total absolute shit. People call me creative but I don't take art; people call me techy but I don't take computer science. I take Greek. Fucking Greek. In my spare time I enjoy reading mushy romance novels that make me feel suicidal and talking to my ex-girlfriend who now resides on a 64GB Sandisk flash drive as an AI.</p>
@@ -74,7 +75,7 @@
                             <img src="images/Peter.png"/> <br/>
 						</div>
 					</div>
-					<div class="spotlight onscroll-image-fade-in style2 orient-right content-align-left image-position-center">
+					<div class="spotlight onscroll-image-fade-in style2 orient-right content-align-left image-position-center no-vertical-padding">
 						<div class="content">
 								<h3>Raghvi Arya</h3>
 								<p>Hi, I’m a web designer for this website even though I know very little about web design, Greek or Latin and so am feigning knowledge for the chance to put this on my CV. I got an A* in art GCSE and am continuing onto A-Level and generally enjoy thinking of and discovering creative ideas. I am super passionate about learning and entrepreneurship and so am truly excited to be working as a part of this team.</p>
@@ -85,39 +86,18 @@
 					</div>
 
 
-
-					<a href="#" data-target-id="banner" data-current-id="latin-menu"  class="button big wide smooth-scroll-middle"> Go Back </a>	
 				</div>
 			</section>
 
 			<!-- Github Stuff -->
-			<section id="source" class="hidden wrapper style1 align-center">
+			<section id="source"  data-linker="true" class="hidden wrapper style1 align-center">
 				<div class="inner">
-					<h2>Grammar</h2>
-					<p>Grammar Matters</p>
-					<div class="items style1 medium">
-						<a href="latin-lesser-compendium.html" class="no-link-underline">
-						<section>
-							<span class="icon style2 major fa-sticky-note"></span>
-							<h3>The Lesser Compendium </h3>
-							<p>An overview of grammar</p>
-						</section>
-						</a>
-						<a href="latin-vocab.html" class="no-link-underline">
-							<section>
-								<span class="icon style2 major fa-book"></span>
-								<h3>The Grand Compendium </h3>
-								<p>A comprehensive tour of Latin</p>
-							</section> 
-						</a>
-						<section>
-							<span class="icon style2 major fa-language"></span>
-							<h3>Nuances and Usage</h3>
-							<p>Stuff you may have missed</p>
-						</section>
-						
-					</div>
-					<a href="#" data-target-id="latin-menu" data-current-id="latin-lit-menu"  class="button big wide smooth-scroll-middle"> Go Back </a>	
+					<h2>Latest Progress</h2>
+					<p> JustGratinThings is open-source. The code is hosted on <a href="https://github.com/PeterTheHe/JGT"> Github </a> - feel free to improve it either by sending us a pull request or emailing <code> peter at justgratinthings.co.uk </code>.  </p>
+
+					<table id="commits" class="alternate"></table>
+
+
 				</div>
 			</section>
 			</div>
@@ -133,4 +113,5 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 		<script src="assets/js/linker.js"></script>
+		<script src="assets/js/github/recentcommits.js"></script>
 </body>

@@ -18,7 +18,6 @@ $("a").click(function(){
                 $("#"+target).addClass("visible");
                 $("#"+target).addClass("animated fadeIn visible").one(animationEnd, function() {
                     $("#"+target).removeClass("animated fadeIn visible");
-                    fixFooter(); //from home.js
                 });
                 document.location.hash = (target == "banner") ? "" : target;
             });
@@ -39,7 +38,6 @@ $("a").click(function(){
             $("#"+target).addClass("visible");
             $("#"+target).addClass("animated fadeIn visible").one(animationEnd, function() {
                 $("#"+target).removeClass("animated fadeIn visible");
-                fixFooter(); //from home.js
             });
             document.location.hash = (target == "banner") ? "" : target;
         }); 
@@ -65,7 +63,6 @@ $( document ).ready(function($) {
             var others = $('section').filter(function() {
                return $(this).data('linker') !== undefined;
             });
-            console.log (others);
             others.addClass("hidden");
         }
         target.removeClass("hidden");
@@ -74,6 +71,8 @@ $( document ).ready(function($) {
     }
 
 });
+
+
 
 
 
