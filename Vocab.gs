@@ -2,25 +2,50 @@ function doGet(e) {
   
   var language = e.parameters.language;
   var query = e.parameters.query;
-  
-  //Check if we have stuff  
-  if (query == undefined){
-    return ContentService.createTextOutput("No Query");
+  var test = e.parameters.test;
+
+  //Test or DVL query?
+  if (test != undefined){
+    var level = e.parameters.level; //GCSE? AS?
+    var questions = e.parameters.questions; //No. Questions
+   
+    //Process them so that they look nice
+    language = language.toString().toLowerCase().trim();
+    level = level.toString().toLowerCase().trim();
+    questions = parseInt(questions);
+       
+    
+    if (level == undefined){
+      return ContentService.createTextOutput("No Level");
+    }
+    if (questions == undefined){
+      return ContentService.createTextOutput("No Questions");
+    }
+    
+    
+    result = ((language == "latin") ? generateLatinTest(level, questions) : generateGreekTest(level, questions));
+    
   }
   
-  if (language == undefined){
-    return ContentService.createTextOutput("No Language");
-  }  
-  
-  Logger.log(language);
-  
-  //Process them so that they look nice
-  language = language.toString().toLowerCase().trim();
-  query = query.toString().toLowerCase().trim();
-  
-  Logger.log(language);
-  
-  var result = ((language == "latin") ? searchLatin(query) : searchGreek(query));
+  else  
+  {
+    
+    //Check if we have stuff  
+    if (query == undefined){
+      return ContentService.createTextOutput("No Query");
+    }
+    
+    if (language == undefined){
+      return ContentService.createTextOutput("No Language");
+    }  
+    
+    //Process them so that they look nice
+    language = language.toString().toLowerCase().trim();
+    query = query.toString().toLowerCase().trim();
+    
+    result = ((language == "latin") ? searchLatin(query) : searchGreek(query));
+ 
+  }
   
   return ContentService.createTextOutput(result);
   
@@ -31,16 +56,7 @@ function searchLatin (query){
   var result = "";
   
   //Open up the sheet
-  var sheetName = "Latin Vocabulary Sheet";
-  var file, files = DriveApp.getFilesByName(sheetName); 
-  
-  if (files.hasNext ()){
-    file = files.next(); 
-  } else {
-    return "";
-  }
-  
-  var sheet = SpreadsheetApp.openById(file.getId());
+  var sheet = openSheet("Latin Vocabulary Sheet")
   var data = sheet.getActiveSheet().getDataRange().getValues();
   
   //Basic linear search
@@ -78,16 +94,7 @@ function searchGreek (query){
   var result = "";
   
   //Open up the sheet
-  var sheetName = "Greek Vocabulary Sheet";
-  var file, files = DriveApp.getFilesByName(sheetName); 
-  
-  if (files.hasNext ()){
-    file = files.next(); 
-  } else {
-    return "";
-  }
-  
-  var sheet = SpreadsheetApp.openById(file.getId());
+  var sheet = openSheet("Greek Vocabulary Sheet");
   var data = sheet.getActiveSheet().getDataRange().getValues();
   
   //Basic linear search
