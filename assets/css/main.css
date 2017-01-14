@@ -8440,11 +8440,17 @@
 		max-width: 80%;
 		height: 100%;
 		-webkit-overflow-scrolling: touch;
-		background: #585858;
+		background: #4E4C67;
 		color: #ffffff;
 		cursor: default;
 		visibility: hidden;
 		z-index: 10002;
+	}
+
+	#menu h1{
+
+		color: #ffffff;
+
 	}
 
 		#menu > .inner {
@@ -8602,6 +8608,12 @@
 			transform: scale(1.0) rotate(0deg);
 			opacity: 1;
 		}
+
+	#menu a{
+
+		text-decoration: none;
+
+	}
 
 
 /* banner */

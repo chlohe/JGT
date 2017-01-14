@@ -1,7 +1,7 @@
 $( document ).ready(function($) {
 
-    $("#latin-menu").addClass("hidden");
-    $("#greek-menu").addClass("hidden");
+    $("#latin").addClass("hidden");
+    $("#greek").addClass("hidden");
     $("#latin-lit-menu").addClass("hidden");
     $("#greek-lit-menu").addClass("hidden");
 
