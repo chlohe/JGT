@@ -15,6 +15,10 @@ generateTest();
 var questions;
 var currentQuestionCount;
 var score;
+var takingInput = true;
+
+var cross = '<svg class="checkmark-wrong" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark_circle_wrong" cx="26" cy="26" r="25" fill="none" /><path class="checkmark__check" fill="none" d="M16 16 36 36 M36 16 16 36" /></svg>';
+var tick = '<svg class="checkmark-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark_circle_right" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>';
 
 function generateTest(){
 
@@ -49,20 +53,45 @@ function nextQuestion() {
 function submitAnswer (){
 
     var answer = $("#answer").val().trim().toLowerCase();
-    if (checkAnswer(answer)){
-        alert ("YAY");
-        score++;
+
+    if (takingInput && answer != ""){
+
+        takingInput = false;
+        if (checkAnswer(answer)){
+            $("#tick-area").html(tick);
+            score++;
+        }
+        else{
+            $("#tick-area").html(cross);
+        }
+        sleep (2000).then(() => {
+            //has the user skipped?
+            if (!takingInput){
+                //reset everything
+                $("#tick-area").html("");
+                $("#answer").val("");
+                nextQuestion();
+                takingInput = true;
+            }
+        });
+
     }
-    else{
-        alert ("NAY");
+    else
+    {
+            $("#tick-area").html("");
+            $("#answer").val("");
+            nextQuestion();
+            takingInput = true;
     }
-    $("#answer").val("");
-    nextQuestion();
-    
+
 }
 
 function checkAnswer(answer){
 
     return (questions[currentQuestionCount - 1][4].toLowerCase().trim().split(",").map(x => x.trim()).includes(answer));
 
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
