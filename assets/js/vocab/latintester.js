@@ -9,7 +9,9 @@ $("#answer").on('keyup', function (e) {
     }
 });
 
-generateTest();
+$("#start-test").click(function(){
+    generateTest();
+})
 
 
 var questions;
@@ -33,6 +35,9 @@ function generateTest(){
             //console.log(questions);
             currentQuestionCount = 0;
             score = 0;
+            //Show stuff
+            $("#settings").addClass("hidden");
+            $("#test").removeClass("hidden");
             nextQuestion();
         });
 
@@ -54,34 +59,39 @@ function submitAnswer (){
 
     var answer = $("#answer").val().trim().toLowerCase();
 
-    if (takingInput && answer != ""){
+    if (answer != ""){
 
-        takingInput = false;
-        if (checkAnswer(answer)){
-            $("#tick-area").html(tick);
-            score++;
+        if (takingInput){
+
+            takingInput = false;
+            if (checkAnswer(answer)){
+                $("#tick-area").html(tick);
+                score++;
+            }
+            else{
+                $("#tick-area").html(cross);
+                $("#question").html("<h1>" + questions[currentQuestionCount - 1][4] + "</h1>")
+            }
+            sleep (2000).then(() => {
+                //has the user skipped?
+                if (!takingInput){
+                    //reset everything
+                    $("#tick-area").html("");
+                    $("#answer").val("");
+                    nextQuestion();
+                    takingInput = true;
+                }
+            });
+
         }
-        else{
-            $("#tick-area").html(cross);
-        }
-        sleep (2000).then(() => {
-            //has the user skipped?
-            if (!takingInput){
-                //reset everything
+        else
+        {
                 $("#tick-area").html("");
                 $("#answer").val("");
                 nextQuestion();
                 takingInput = true;
-            }
-        });
+        }
 
-    }
-    else
-    {
-            $("#tick-area").html("");
-            $("#answer").val("");
-            nextQuestion();
-            takingInput = true;
     }
 
 }
