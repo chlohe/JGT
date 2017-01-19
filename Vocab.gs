@@ -63,7 +63,7 @@ function searchLatin (query){
   for (var i = 1; i < data.length; i++){
     
     //Check for forms of the word (eg. a, ab)
-    var forms = (data[i][1].toString() + "," + data[i][5].toString()).toLowerCase().split(",");
+    var forms = (data[i][1].toString() + "," + data[i][5].toString() + data[i][6].toString()).toLowerCase().split(",");
     
     for (var j = 0; j < forms.length; j++){
     
