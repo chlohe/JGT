@@ -102,7 +102,7 @@ function dvlQuery(){
                     
                     }
 
-                    if (forms[60 != "n/a"]){
+                    if (forms[60] != "n/a"){
 
                         table +="<br/><h2><b>" + forms[60] + "</b> </h2> <h4>" + compSupDefinitions[1] + "</h4><br/>";
                         table += "<table class=\"alt uniform fixed\">";
