@@ -10,6 +10,7 @@ $("#go").click(function(){
             var word = "";
             if (data == "No Results"){
                 $("#result").html("<h2> No Results </h2>");
+				return;
             }
             
             word = JSON.parse(data);
